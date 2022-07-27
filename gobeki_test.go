@@ -8,7 +8,7 @@ import (
 func TestGenerateBeki(t *testing.T) {
 	t.Run("generate sentence with n number of words", func(t *testing.T) {
 		wordCount := 50
-		got := gobeki(wordCount, 1)
+		got := Gobeki(wordCount, 1)
 
 		length := len(strings.Split(got, " "))
 
@@ -32,7 +32,7 @@ func TestGenerateBeki(t *testing.T) {
 
 	t.Run("generate n number of paragraphs", func(t *testing.T) {
 		paragraphCount := 2
-		got := gobeki(1, 2)
+		got := Gobeki(1, 2)
 
 		length := len(strings.Split(got, "\n\n"))
 

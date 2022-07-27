@@ -9,7 +9,7 @@ import (
 )
 
 // gobeki generates a beki ipsum sentence depending on the number of words and paragraphs given
-func gobeki(numWords int, paragraphs int) string {
+func Gobeki(numWords int, paragraphs int) string {
 	buf := bytes.Buffer{}
 
 	for p := 0; p < paragraphs; p++ {
