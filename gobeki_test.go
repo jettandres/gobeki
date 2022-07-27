@@ -6,9 +6,9 @@ import (
 )
 
 func TestGenerateBeki(t *testing.T) {
-	t.Run("generate sentence with n number words", func(t *testing.T) {
+	t.Run("generate sentence with n number of words", func(t *testing.T) {
 		wordCount := 50
-		got := gobeki(wordCount)
+		got := gobeki(wordCount, 1)
 
 		length := len(strings.Split(got, " "))
 
@@ -27,6 +27,17 @@ func TestGenerateBeki(t *testing.T) {
 
 		if randomWord == anotherRandomWord {
 			t.Errorf("words are not random\n%s | %s", randomWord, anotherRandomWord)
+		}
+	})
+
+	t.Run("generate n number of paragraphs", func(t *testing.T) {
+		paragraphCount := 2
+		got := gobeki(1, 2)
+
+		length := len(strings.Split(got, "\n"))
+
+		if length != paragraphCount {
+			t.Errorf("got %d, want %d", length, paragraphCount)
 		}
 	})
 }
