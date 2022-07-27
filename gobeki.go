@@ -3,6 +3,7 @@ package gobeki
 import (
 	"bytes"
 	"fmt"
+	"math/rand"
 	"strings"
 )
 
@@ -18,5 +19,7 @@ func gobeki(numWords int) string {
 }
 
 func generateRandomWord() string {
-	return ""
+	loremsLength := int64(len(lorems))
+	rand.Seed(loremsLength)
+	return lorems[rand.Intn(len(lorems))]
 }
