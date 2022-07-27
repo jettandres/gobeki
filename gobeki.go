@@ -8,9 +8,7 @@ import (
 	"time"
 )
 
-// gobeki generate beki ipsum sentence
-// params:
-//   numWords - number of words to generate
+// gobeki generates a beki ipsum sentence depending on the number of words and paragraphs given
 func gobeki(numWords int, paragraphs int) string {
 	buf := bytes.Buffer{}
 
