@@ -16,4 +16,12 @@ func TestGenerateBeki(t *testing.T) {
 			t.Errorf("got %d, want %d", length, wordCount)
 		}
 	})
+
+	t.Run("generate random beki word", func(t *testing.T) {
+		randomWord := generateRandomWord()
+
+		if randomWord == "" {
+			t.Errorf("no word generated")
+		}
+	})
 }

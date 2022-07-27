@@ -16,3 +16,7 @@ func gobeki(numWords int) string {
 	}
 	return strings.TrimSuffix(buf.String(), " ")
 }
+
+func generateRandomWord() string {
+	return ""
+}
