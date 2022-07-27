@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"strings"
+	"time"
 )
 
 // gobeki generate beki ipsum sentence
@@ -13,13 +14,12 @@ import (
 func gobeki(numWords int) string {
 	buf := bytes.Buffer{}
 	for i := 0; i < numWords; i++ {
-		fmt.Fprint(&buf, "hello ")
+		fmt.Fprintf(&buf, "%s ", generateRandomWord())
 	}
 	return strings.TrimSuffix(buf.String(), " ")
 }
 
 func generateRandomWord() string {
-	loremsLength := int64(len(lorems))
-	rand.Seed(loremsLength)
+	rand.Seed(time.Now().UnixNano())
 	return lorems[rand.Intn(len(lorems))]
 }
