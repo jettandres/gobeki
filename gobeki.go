@@ -17,10 +17,10 @@ func gobeki(numWords int, paragraphs int) string {
 			fmt.Fprintf(&buf, "%s ", generateRandomWord())
 		}
 
-		fmt.Fprintln(&buf)
+		fmt.Fprintf(&buf, "\n\n")
 	}
 
-	formattedResult := strings.TrimSuffix(buf.String(), "\n")
+	formattedResult := strings.TrimSuffix(buf.String(), "\n\n")
 	formattedResult = strings.TrimSuffix(formattedResult, " ")
 	return formattedResult
 }

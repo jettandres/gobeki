@@ -34,7 +34,7 @@ func TestGenerateBeki(t *testing.T) {
 		paragraphCount := 2
 		got := gobeki(1, 2)
 
-		length := len(strings.Split(got, "\n"))
+		length := len(strings.Split(got, "\n\n"))
 
 		if length != paragraphCount {
 			t.Errorf("got %d, want %d", length, paragraphCount)
